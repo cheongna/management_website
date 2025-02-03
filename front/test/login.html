@@ -18,27 +18,32 @@
             <img src="" alt="홈화면으로 가는 이미지">
         </div>
         <div class="loginmain">
-            <div class="loginun">
-                <label for="username"></label>
-                <input id="username" type="text" name="username" placeholder="이메일을 입력해 주세요">
-            </div>
-            <div class="loginpw">
-                <label for="password"></label>
-                <input id="password" type="password" name="password" placeholder="비밀번호를 입력해 주세요">
-            </div>
-            <div class="login">
-                <button class="loginbt">로그인</button>
-            </div>
-            <div class="find">
-                <label class="rememberid" for="rememberid"> <input id="rememberid" type="checkbox"
-                                                                   name="rememberid"> 아이디 저장</label>
-                <a href="">아이디 찾기</a>
-                <a href="">비밀번호 찾기</a>
-            </div>
+            <form action="/users/login" method="post">
+                <div class="loginun">
+                    <label for="username"></label>
+                    <input id="username" type="text" name="username" placeholder="이메일을 입력해 주세요">
+                </div>
+                <div class="loginpw">
+                    <label for="password"></label>
+                    <input id="password" type="password" name="password" placeholder="비밀번호를 입력해 주세요">
+                </div>
+                <div class="login">
+                    <button type="submit" class="loginbt">로그인</button>
+                </div>
+            </form>
         </div>
-        <div class="register">
-            <button class="registerbt">회원가입</button>
+        <div class="find">
+            <label class="rememberid" for="rememberid"> <input id="rememberid" type="checkbox" name="rememberid">
+                아이디 저장</label>
+            <a href="">아이디 찾기</a>
+            <a href="">비밀번호 찾기</a>
         </div>
+        </div>
+        <form action="/register" method="post">
+            <div class="register">
+                <button type="submit" class="registerbt">회원가입</button>
+            </div>
+        </form>
     </section>
 </main>
 <footer>
