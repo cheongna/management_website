@@ -1,25 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/loginstyle.css">
 </head>
+
 <body>
-<h2>Please Login</h2>
-<form action="/users/login" method="post">
-    <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-    </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-    </div>
-    <button type="submit">Login</button>
-</form>
-<form action="/register" method="get">
-    <button type="submit">회원가입</button>
-</form>
+<header>
+    <h1>Login</h1>
+</header>
+<main>
+    <section>
+        <div class="homeimg">
+            <img src="" alt="홈화면으로 가는 이미지">
+        </div>
+        <div class="loginbox">
+            <form class="loginmain" action="/users/login" method="post">
+                <div class="loginun">
+                    <label for="username"></label>
+                    <input id="username" type="text" name="username" placeholder="이메일을 입력해 주세요">
+                </div>
+                <div class="loginpw">
+                    <label for="password"></label>
+                    <input id="password" type="password" name="password" placeholder="비밀번호를 입력해 주세요">
+                </div>
+                <div class="login">
+                    <button type="submit" class="loginbt">로그인</button>
+                </div>
+            </form>
+            <div class="find">
+                <label class="rememberid" for="rememberid"> <input id="rememberid" type="checkbox"
+                                                                   name="rememberid">
+                    아이디 저장</label>
+                <a href="">아이디 찾기</a>
+                <a href="">비밀번호 찾기</a>
+            </div>
+        </div>
+        <div class="register">
+            <form action="/register" method="post">
+                <button type="submit" class="registerbt">회원가입</button>
+            </form>
+        </div>
+    </section>
+</main>
+<footer>
+
+</footer>
 </body>
+
 </html>
