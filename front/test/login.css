@@ -168,13 +168,17 @@ label:hover,
     cursor: pointer;
 }
 
-div.loginmain {
+div.loginbox {
     background-color: #e9edc9;
     border: 1px solid black;
     width: 40%;
     height: 150px;
     padding: 3% 3% 6% 3%;
     border-radius: 5px;
+}
+
+form.loginmain {
+    box-sizing: border-box;
 }
 
 div.loginun,
