@@ -22,11 +22,6 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginDto loginDto) {
-        if (loginDto.username.equals("ehgus973") && loginDto.password.equals("to3847")) {
-            return ResponseEntity.ok("로그인 성공");
-        } else {
-            return ResponseEntity.status(401).body("로그인 실패");
-        }
+    public void login() {
     }
 }
