@@ -21,7 +21,7 @@
 </header>
 <main>
   <div class="head">
-    <h2>아이디 찾기</h2>
+    <h2 id="yourId">아이디 찾기</h2>
   </div>
   <section class="findIdform">
     <form id="findIdForm">
@@ -45,5 +45,30 @@
 
 </footer>
 </body>
+<script>
+  document.getElementById("findIdForm").addEventListener("submit", function (event) {
+      event.preventDefault()
+      const name = document.getElementById("nameCheck").value
+      const phone = document.getElementById("phoneCheck").value
+
+      const data = {
+          name: name,
+          phone: phone
+      }
+      fetch("localhost:8080/users/find/username", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+      })
+          .then((response) => response.json())
+          .then((data) => {
+              document.getElementById("yourId").innerText = "아이디는" + data.username + "입니다."
+          })
+          .catch((error) => console.error());
+  })
+
+</script>
 
 </html>
