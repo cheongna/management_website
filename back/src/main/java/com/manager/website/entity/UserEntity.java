@@ -2,6 +2,10 @@ package com.manager.website.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.sql.Timestamp;
+import java.util.List;
 
 @Getter
 @Setter
@@ -29,5 +33,20 @@ public class UserEntity {
 
     @Column(length = 100)
     public String address;
+
+    @Column
+    public String role;
+
+    @Column
+    public boolean is_accept = false;
+
+    @CreationTimestamp
+    public Timestamp created_at;
+
+    @PrePersist
+    private void setBefore() {
+        this.is_accept = false;
+        this.role = "ROLE_USER";
+    }
 
 }
