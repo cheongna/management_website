@@ -29,4 +29,9 @@ public class RedirectController {
     public String registerPage() {
         return "register";
     }
+
+    @GetMapping("/findId")
+    public String findIdPage() {
+        return "findId";
+    }
 }

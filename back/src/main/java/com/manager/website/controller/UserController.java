@@ -24,4 +24,10 @@ public class UserController {
     @PostMapping("/login")
     public void login() {
     }
+
+    @PostMapping("/find/username")
+    public ResponseEntity<UserDto> findUsername(@RequestBody UserDto dto) {
+        UserDto result = userService.findUsername(dto);
+        return ResponseEntity.ok(result);
+    }
 }

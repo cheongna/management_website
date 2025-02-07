@@ -18,4 +18,15 @@ public class UserService {
         UserEntity user = userDatabase.save(entity);
         return UserDto.convertToDto(user);
     }
+
+    public UserDto findUsername(UserDto dto) {
+        String name = dto.getName();
+        String phone = dto.getPhone();
+        UserEntity entity = userDatabase.findByNameAndPhone(name, phone);
+        if (entity != null) {
+            return UserDto.convertToDto(entity);
+        } else {
+            return null;
+        }
+    }
 }
