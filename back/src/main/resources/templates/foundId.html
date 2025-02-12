@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="foundIdstyle.css">
+    <link rel="stylesheet" type="text/css" href="/css/foundIdstyle.css">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
     </div>
     <section class="foundIdform">
         <div class="foundId">
-            <p class="noticeId">아이디는 " " 입니다.</p>
+            <p class="noticeId">아이디는 <span th:text="${username}"></span> 입니다.</p>
             <button class="loginMainbtn" type="submit">로그인 페이지</button>
         </div>
     </section>

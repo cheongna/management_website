@@ -1,5 +1,6 @@
 package com.manager.website.entity;
 
+import com.manager.website.dto.UserDto;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -48,5 +49,4 @@ public class UserEntity {
         this.is_accept = false;
         this.role = "ROLE_USER";
     }
-
 }
