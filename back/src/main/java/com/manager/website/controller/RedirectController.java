@@ -1,8 +1,16 @@
 package com.manager.website.controller;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.Map;
 
 @Controller
 public class RedirectController {
@@ -33,5 +41,17 @@ public class RedirectController {
     @GetMapping("/findId")
     public String findIdPage() {
         return "findId";
+    }
+
+    @GetMapping("/findPw")
+    public String findPwPage() {
+        return "findPw";
+    }
+
+    @GetMapping("/foundId")
+    public String foundIdPage(HttpSession session, Model model) {
+        String username = (String) session.getAttribute("username");
+        model.addAttribute("username", username);
+        return "foundId";  // foundId 페이지로 이동
     }
 }

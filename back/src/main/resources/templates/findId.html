@@ -61,11 +61,18 @@
             },
             body: JSON.stringify(data)
         })
-            .then((response) => response.json())
-            .then((data) => {
-                document.getElementById("yourId").innerText = "아이디는" + data.username + "입니다."
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
             })
-            .catch((error) => console.error());
+            .then((data) => {
+                window.location.href = "/foundId"
+            })
+            .catch((error) => {
+                console.error("오류 발생:", error);
+            });
     })
 
 </script>
